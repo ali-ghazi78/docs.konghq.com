@@ -38,7 +38,8 @@ $ curl -s -XPOST http://localhost:8001/services -d 'name=foo' -d 'url=http://exa
   "tags": null,
   "client_certificate": null
 }
-
+```
+```shell
 # create a route associated with the above service
 $ curl -s -XPOST http://localhost:8001/services/foo/routes -d 'name=bar' -d 'paths[]=/bar' | jq
 {
@@ -68,9 +69,9 @@ $ curl -s -XPOST http://localhost:8001/services/foo/routes -d 'name=bar' -d 'pat
   "hosts": null,
   "methods": null
 }
-
+```
+```shell
 # create a global plugin
-
 $ curl -s -XPOST http://localhost:8001/plugins -d 'name=prometheus' | jq
 {
     "config": {},
